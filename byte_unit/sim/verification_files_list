@@ -1,0 +1,5 @@
++incdir+./../src/design
++incdir+./../src/design/cpu
++incdir+./../src/testbench
+
+./../src/testbench/byte_unit_tb.sv

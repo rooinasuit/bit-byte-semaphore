@@ -1,0 +1,49 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2023.3 linux_x86_64 Jul 17 2023
+# //
+# //  Copyright 1991-2023 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# vsim -voptargs="+acc" -debugDB -do "sim.do" work.byte_unit_tb -Ldir ../src 
+# Start time: 16:39:38 on Jan 05,2025
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vsim-8611) Generating debug db.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2685) [TFMPC] - Too few port connections for 'memory_access_inst'.  Expected 35, found 29.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2718) [TFMPC] - Missing connection for port 'sema_data_out'.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2718) [TFMPC] - Missing connection for port 'sema_write'.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2718) [TFMPC] - Missing connection for port 'sema_ready'.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2718) [TFMPC] - Missing connection for port 'sema_is_empty'.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2718) [TFMPC] - Missing connection for port 'sema_data_in'.
+# ** Warning: ./../src/design/cpu/byte_unit_top.sv(262): (vopt-2718) [TFMPC] - Missing connection for port 'sema_valid'.
+# ** Note: (vopt-143) Recognized 1 FSM in module "byte_unit_top(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=8.
+# Loading sv_std.std
+# Loading work.byte_unit_tb(fast)
+# Loading work.byte_unit_top(fast)
+# Loading work.instruction_memory(fast)
+# Loading work.instruction_fetch(fast)
+# Loading work.instruction_decode(fast)
+# Loading work.instruction_execute(fast)
+# Loading work.memory_access(fast)
+# Loading work.register_writeback(fast)
+# Loading work.data_memory(fast)
+# ** Note: (vsim-8900) Creating design debug database vsim.dbg.
+# do sim.do
+# 661457 ps
+# 2991503 ps
+# Loaded program into the instruction memory
+# Loaded initial data into the data memory
+# 0 ps
+# 10500 ns
+quit
+# End time: 17:22:21 on Jan 05,2025, Elapsed time: 0:42:43
+# Errors: 0, Warnings: 8
