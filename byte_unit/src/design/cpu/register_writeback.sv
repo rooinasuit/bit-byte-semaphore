@@ -35,6 +35,10 @@ always @(*) begin
     end else begin
       wb_regfile_writeback = mem_alu_result;
     end
+  end else begin
+    wb_reg_write = 1'b0;
+    wb_rd_id     = 4'b0;
+    wb_regfile_writeback = 16'd0;
   end
 end
 

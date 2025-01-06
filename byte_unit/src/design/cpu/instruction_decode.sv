@@ -230,6 +230,9 @@ always @(*) begin
   end else if ((wb_reg_write == 1'b1) & (wb_rd_id != 0)) begin
     regfile[wb_rd_id] = wb_regfile_writeback;
   end else if (suspend_cpu == 1'b0) begin
+    if ((opcode != LD) && (opcode != SEMA_RD)) begin
+      rs1 = regfile[rs1_id];
+    end
     case (opcode)
       ADD, SUB, MUL, DIV, AND, OR, XOR, SHL, SHR,
       BEQ, BNE, BGT, BLT, CEQ, CNE, CGT, CLT: begin
