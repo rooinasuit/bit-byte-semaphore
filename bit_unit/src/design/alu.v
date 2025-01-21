@@ -43,15 +43,16 @@ end
 
 
 always @(posedge clk or negedge rst) begin
-  if(rst) begin
+  if(!rst) begin
     current_result <= 0;
     data_out <= 0;
    end
   else if (wr_cr) begin
+    $display("cr val set to: %0.d",data_out);
     current_result <= data_out;
   end
 end
 
-assign zero_flag = ~|data_out;
+assign zero_flag = ~|current_result;
 
 endmodule

@@ -25,7 +25,9 @@ output reg sem_data_read,
 
 output reg [DATA_WIDTH-1:0] sem_data_out,
 output reg sem_data_valid_out,
-input sem_data_empty
+input sem_data_empty,
+
+output reg [3:0] state
 );
 
 wire [ADDRESS_WIDTH-1:0] pc_in;
@@ -87,7 +89,9 @@ controller #() ctrl_inst(
 
 .sem_data_out(sem_data_out),
 .sem_data_valid_out(sem_data_valid_out),
-.sem_data_empty(sem_data_empty)
+.sem_data_empty(sem_data_empty),
+
+.cs(state)
 );
 
 
@@ -105,7 +109,7 @@ block_alu #() alu_inst(
 .rst(rst),
 .clk(clk),
 .data_in(alu_data_out),
-.wr_cr(alu_op),
+.wr_cr(wr_cr),
 .alu_op(alu_op),
 .data_out(alu_data_in),
 .zero_flag(alu_zero_flag)

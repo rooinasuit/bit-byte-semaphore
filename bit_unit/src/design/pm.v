@@ -22,9 +22,26 @@ always @(*) begin
 //
 //    end
 //  else if (mode == `MODE_RUN) begin
+      //#1
       data_out <= mem[address];
 
    // end
 end
+
+
+`define USE_INSTRUCTIONS
+`include "definy.v"
+reg [DATA_WIDTH-1:0] program_data [] =  
+`include "../memory_files/program_file.v";
+initial begin
+  foreach (program_data[i]) begin
+    mem[i] = program_data[i];
+  end
+  $display("Program memory initialized");
+end
+`undef USE_INSTRUCTIONS
+
+
+
 
 endmodule

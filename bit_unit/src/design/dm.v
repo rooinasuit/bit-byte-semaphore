@@ -18,6 +18,18 @@ reg [DATA_WIDTH-1:0] mem [2**ADDRESS_WIDTH];
 
 always @(*) data_out <= mem[address];
 
-always @(posedge clk) if(wr) mem[address] <= data_in;
+//always @(posedge clk) if(wr) mem[address] <= data_in;
+always @(posedge clk) if(wr) mem[address] = data_in;
+
+
+reg [DATA_WIDTH-1:0] dm_data [] =  
+`include "../memory_files/data_mem_file.v";
+initial begin
+  foreach (dm_data[i]) begin
+    mem[i] = dm_data[i];
+  end
+  $display("Data memory initialized");
+end
+
 
 endmodule

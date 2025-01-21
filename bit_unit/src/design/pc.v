@@ -18,7 +18,7 @@ output reg [WIDTH-1:0] data_out
 );
 
 always @(posedge clk or negedge rst) begin
-  if (rst) data_out <= 0;
+  if (!rst) data_out <= 0;
   else begin
     if (WE) data_out <= data_in;
     else if (EN) data_out <= data_out + 1;
