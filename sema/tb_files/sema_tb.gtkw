@@ -1,0 +1,32 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Wed Jan 22 22:48:52 2025
+[*]
+[dumpfile] "C:\Users\KG-6\Desktop\AFTER_261224\MSC\PBL\sema\tb_files\sema_tb.vcd"
+[dumpfile_mtime] "Wed Jan 22 22:48:50 2025"
+[dumpfile_size] 4084
+[savefile] "C:\Users\KG-6\Desktop\AFTER_261224\MSC\PBL\sema\tb_files\sema_tb.gtkw"
+[timestart] 0
+[size] 1920 1017
+[pos] -1 -1
+*-15.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] sema_tb.
+[treeopen] sema_tb.sema1.
+[treeopen] sema_tb.sema1.connector_cpuA_2_cpuB.
+[sst_width] 197
+[signals_width] 296
+[sst_expanded] 1
+[sst_vpaned_height] 300
+@28
+sema_tb.sema1.connector_cpuA_2_cpuB.clk_s
+sema_tb.sema1.connector_cpuA_2_cpuB.rstn_s
+sema_tb.sema1.connector_cpuA_2_cpuB.sema_write_o_s_A
+sema_tb.sema1.connector_cpuA_2_cpuB.sema_data_o_s_A
+sema_tb.sema1.connector_cpuA_2_cpuB.sema_is_empty_i_s_A
+sema_tb.sema1.connector_cpuA_2_cpuB.sema_data_i_s_B
+sema_tb.sema1.connector_cpuA_2_cpuB.sema_valid_i_s_B
+sema_tb.sema1.connector_cpuA_2_cpuB.sema_ready_o_s_B
+@421
+sema_tb.state
+[pattern_trace] 1
+[pattern_trace] 0

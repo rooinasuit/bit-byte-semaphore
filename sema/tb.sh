@@ -1,7 +1,7 @@
 #! /bin/bash
 foldername="tb_files"
 
-filename="top_tb"
+filename="sema_tb"
 #filename="ALU_tb"
 #filename="RegisterFile_tb"
 #filename="PM_ID_BFM_tb"

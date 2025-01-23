@@ -1,6 +1,6 @@
 #! /bin/bash
 foldername="tb_files"
-filename="sema"
+filename="sema_tb"
 
 echo "====================================================================
               LAUNCHING TEST BENCH COMPILATION:
@@ -12,5 +12,5 @@ echo "====================================================================
 
 
 iverilog -g2012 -o "${foldername}"/"${filename}" "${filename}.sv"
-#vvp "${foldername}"/"${filename}"
-#gtkwave "${foldername}"/"${filename}.vcd" --rcvar 'fontname_signals Monospace 17' --rcvar 'fontname_waves Monospace 12'
+vvp "${foldername}"/"${filename}"
+gtkwave "${foldername}"/"${filename}.vcd" --rcvar 'fontname_signals Monospace 17' --rcvar 'fontname_waves Monospace 12'
