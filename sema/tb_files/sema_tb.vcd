@@ -1,5 +1,5 @@
 $date
-	Wed Jan 22 23:48:58 2025
+	Thu Jan 23 14:48:39 2025
 $end
 $version
 	Icarus Verilog
@@ -20,26 +20,28 @@ $var parameter 32 ) st_AB_2 $end
 $var parameter 32 * st_AB_3 $end
 $var parameter 32 + st_AB_4 $end
 $var parameter 32 , st_AB_5 $end
-$var reg 1 - tb_clk_s $end
-$var reg 1 . tb_rstn_s $end
-$var reg 1 / tb_sema_data_o_s_A $end
-$var reg 1 0 tb_sema_data_o_s_B $end
-$var reg 1 1 tb_sema_ready_o_s_A $end
-$var reg 1 2 tb_sema_ready_o_s_B $end
-$var reg 1 3 tb_sema_write_o_s_A $end
-$var reg 1 4 tb_sema_write_o_s_B $end
-$var integer 32 5 state [31:0] $end
+$var parameter 32 - st_AB_6 $end
+$var reg 1 . data $end
+$var reg 1 / tb_clk_s $end
+$var reg 1 0 tb_rstn_s $end
+$var reg 1 1 tb_sema_data_o_s_A $end
+$var reg 1 2 tb_sema_data_o_s_B $end
+$var reg 1 3 tb_sema_ready_o_s_A $end
+$var reg 1 4 tb_sema_ready_o_s_B $end
+$var reg 1 5 tb_sema_write_o_s_A $end
+$var reg 1 6 tb_sema_write_o_s_B $end
+$var integer 32 7 state [31:0] $end
 $scope module sema1 $end
-$var wire 1 - clk_s $end
-$var wire 1 . rstn_s $end
-$var wire 1 / sema_data_o_s_A $end
-$var wire 1 0 sema_data_o_s_B $end
-$var wire 1 1 sema_ready_o_s_A $end
-$var wire 1 2 sema_ready_o_s_B $end
-$var wire 1 3 sema_write_o_s_A $end
-$var wire 1 4 sema_write_o_s_B $end
-$var wire 1 6 wire_wr_A $end
-$var wire 1 7 wire_wr_B $end
+$var wire 1 / clk_s $end
+$var wire 1 0 rstn_s $end
+$var wire 1 1 sema_data_o_s_A $end
+$var wire 1 2 sema_data_o_s_B $end
+$var wire 1 3 sema_ready_o_s_A $end
+$var wire 1 4 sema_ready_o_s_B $end
+$var wire 1 5 sema_write_o_s_A $end
+$var wire 1 6 sema_write_o_s_B $end
+$var wire 1 8 wire_wr_A $end
+$var wire 1 9 wire_wr_B $end
 $var wire 1 ! sema_valid_i_s_B $end
 $var wire 1 " sema_valid_i_s_A $end
 $var wire 1 # sema_is_empty_i_s_B $end
@@ -47,55 +49,55 @@ $var wire 1 $ sema_is_empty_i_s_A $end
 $var wire 1 % sema_data_i_s_B $end
 $var wire 1 & sema_data_i_s_A $end
 $scope module connector_cpuA_2_cpuB $end
-$var wire 1 - clk_s $end
-$var wire 1 . rstn_s $end
-$var wire 1 / sema_data_o_s_A $end
+$var wire 1 / clk_s $end
+$var wire 1 0 rstn_s $end
+$var wire 1 1 sema_data_o_s_A $end
 $var wire 1 $ sema_is_empty_i_s_A $end
-$var wire 1 2 sema_ready_o_s_B $end
-$var wire 1 6 sema_write_o_s_A $end
-$var wire 1 8 wire_is_empty $end
+$var wire 1 4 sema_ready_o_s_B $end
+$var wire 1 ! sema_valid_i_s_B $end
+$var wire 1 8 sema_write_o_s_A $end
+$var wire 1 : wire_is_empty $end
 $var wire 1 % sema_data_i_s_B $end
-$var reg 1 ! sema_valid_i_s_B $end
 $scope module Dff1 $end
-$var wire 1 6 CE $end
-$var wire 1 / D $end
-$var wire 1 - clk $end
-$var wire 1 . nReset $end
-$var parameter 32 9 SET $end
-$var parameter 32 : SIZE $end
+$var wire 1 8 CE $end
+$var wire 1 1 D $end
+$var wire 1 / clk $end
+$var wire 1 0 nReset $end
+$var parameter 32 ; SET $end
+$var parameter 32 < SIZE $end
 $var reg 1 % out $end
 $upscope $end
 $scope module RSff1 $end
-$var wire 1 - clk $end
-$var wire 1 ; reset $end
-$var wire 1 6 set $end
-$var reg 1 8 out $end
+$var wire 1 / clk $end
+$var wire 1 = reset $end
+$var wire 1 8 set $end
+$var reg 1 : out $end
 $upscope $end
 $upscope $end
 $scope module connector_cpuB_2_cpuA $end
-$var wire 1 - clk_s $end
-$var wire 1 . rstn_s $end
-$var wire 1 0 sema_data_o_s_A $end
+$var wire 1 / clk_s $end
+$var wire 1 0 rstn_s $end
+$var wire 1 2 sema_data_o_s_A $end
 $var wire 1 # sema_is_empty_i_s_A $end
-$var wire 1 1 sema_ready_o_s_B $end
-$var wire 1 7 sema_write_o_s_A $end
-$var wire 1 < wire_is_empty $end
+$var wire 1 3 sema_ready_o_s_B $end
+$var wire 1 " sema_valid_i_s_B $end
+$var wire 1 9 sema_write_o_s_A $end
+$var wire 1 > wire_is_empty $end
 $var wire 1 & sema_data_i_s_B $end
-$var reg 1 " sema_valid_i_s_B $end
 $scope module Dff1 $end
-$var wire 1 7 CE $end
-$var wire 1 0 D $end
-$var wire 1 - clk $end
-$var wire 1 . nReset $end
-$var parameter 32 = SET $end
-$var parameter 32 > SIZE $end
+$var wire 1 9 CE $end
+$var wire 1 2 D $end
+$var wire 1 / clk $end
+$var wire 1 0 nReset $end
+$var parameter 32 ? SET $end
+$var parameter 32 @ SIZE $end
 $var reg 1 & out $end
 $upscope $end
 $scope module RSff1 $end
-$var wire 1 - clk $end
-$var wire 1 ? reset $end
-$var wire 1 7 set $end
-$var reg 1 < out $end
+$var wire 1 / clk $end
+$var wire 1 A reset $end
+$var wire 1 9 set $end
+$var reg 1 > out $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -103,10 +105,11 @@ $upscope $end
 $enddefinitions $end
 $comment Show the parameter values. $end
 $dumpall
-b1 >
-b0 =
-b1 :
-b0 9
+b1 @
+b0 ?
+b1 <
+b0 ;
+b110 -
 b101 ,
 b100 +
 b11 *
@@ -116,21 +119,22 @@ b0 '
 $end
 #0
 $dumpvars
-0?
-x<
-0;
+0A
+x>
+0=
+x:
+x9
 x8
-x7
+b1100100 7
 x6
-b1100100 5
+x5
 x4
 x3
 x2
 x1
-x0
-x/
-0.
-0-
+00
+0/
+1.
 x&
 x%
 x$
@@ -141,153 +145,167 @@ $end
 #5000
 0%
 0&
-1-
-#6000
-x;
-x?
-1.
-#10000
-0-
-#15000
-1-
-#20000
-0-
-b0 5
-#25000
-b1 5
 1/
-1-
+#6000
+x=
+xA
+10
+#10000
+0/
+#15000
+1/
+#20000
+0/
+b0 7
+#25000
+b1 7
+11
+1/
 #30000
-0-
+0/
 #35000
-b10 5
-07
-16
-13
-1-
+b10 7
+09
+18
+15
+1/
 #40000
-0-
+0/
 #45000
 1%
-b11 5
+b11 7
 0$
-18
-1-
+1!
+1:
+1/
 #50000
-0-
+0/
 #55000
-b100 5
-x7
-1;
-12
-06
-03
-1-
+b100 7
+x9
+1=
+14
+08
+05
+1/
 #60000
-0-
+0/
 #65000
-b101 5
+b101 7
 1$
-08
-1-
+0!
+0:
+1/
 #70000
-0-
+0/
 #75000
-b0 5
-0;
-02
-1-
+b0 7
+0=
+0.
+04
+1/
 #80000
-0-
+0/
 #85000
-b1 5
-1-
+b1 7
+01
+1/
 #90000
-0-
+0/
 #95000
-b10 5
-07
-16
-13
-1-
+b10 7
+09
+18
+15
+1/
 #100000
-0-
+0/
 #105000
-b11 5
+0%
+b11 7
 0$
-18
-1-
+1!
+1:
+1/
 #110000
-0-
+0/
 #115000
-b100 5
-x7
-1;
-12
-06
-03
-1-
+b100 7
+x9
+1=
+14
+08
+05
+1/
 #120000
-0-
+0/
 #125000
-b101 5
+b101 7
 1$
-08
-1-
+0!
+0:
+1/
 #130000
-0-
+0/
 #135000
-b0 5
-0;
-02
-1-
+b0 7
+0=
+1.
+04
+1/
 #140000
-0-
+0/
 #145000
-b1 5
-1-
+b1 7
+11
+1/
 #150000
-0-
+0/
 #155000
-b10 5
-07
-16
-13
-1-
-#160000
-0-
-#165000
-b11 5
-0$
+b10 7
+09
 18
-1-
+15
+1/
+#160000
+0/
+#165000
+1%
+b11 7
+0$
+1!
+1:
+1/
 #170000
-0-
+0/
 #175000
-b100 5
-x7
-1;
-12
-06
-03
-1-
-#180000
-0-
-#185000
-b101 5
-1$
+b100 7
+x9
+1=
+14
 08
-1-
+05
+1/
+#180000
+0/
+#185000
+b101 7
+1$
+0!
+0:
+1/
 #190000
-0-
+0/
 #195000
-b0 5
-0;
-02
-1-
+b0 7
+0=
+0.
+04
+1/
 #200000
-0-
+0/
 #205000
-b1 5
-1-
+b1 7
+01
+1/
 #206000

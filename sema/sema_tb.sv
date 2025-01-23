@@ -63,14 +63,16 @@ parameter st_AB_2 = 2;
 parameter st_AB_3 = 3;
 parameter st_AB_4 = 4;
 parameter st_AB_5 = 5;
+parameter st_AB_6 = 6;
 
 integer state = 100;
+reg data = 1'b1;
 // We operate on 3 inputs to affect 3 outputs (6 signals)
 
 always @(posedge tb_clk_s)
 case(state) 
     st_AB_0: begin
-        tb_sema_data_o_s_A = 1'b1;
+        tb_sema_data_o_s_A = data;
         state <= st_AB_1;
     end
     st_AB_1: begin
@@ -93,6 +95,7 @@ case(state)
     st_AB_5: begin
         tb_sema_ready_o_s_B = 1'b0;
         state <= st_AB_0;
+        data=~data;
     end
 
     default begin
@@ -107,6 +110,7 @@ endcase
 //============================================================================
 
 initial begin
+
     #20 state = 0;
 end
 

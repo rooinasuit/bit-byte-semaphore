@@ -31,6 +31,6 @@ module sem_mem_connector(
         .out(wire_is_empty)
     );
 
-
+    assign sema_valid_i_s_B = wire_is_empty;
     assign sema_is_empty_i_s_A = ~wire_is_empty;
 endmodule
