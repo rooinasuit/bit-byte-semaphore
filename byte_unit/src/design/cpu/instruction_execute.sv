@@ -73,6 +73,9 @@ reg [15:0] alu_multi_cycle_out;
 
 reg comp_result;
 
+//======================
+// Arithmetic-Logic Unit
+
 assign alu_in1 = id_rs1;
 assign alu_in2 = (id_alu_src == 1'b1) ? id_imm : id_rs2;
 
@@ -90,6 +93,9 @@ always @(*) begin
     default:  alu_single_cycle_out = 16'b0;
   endcase
 end
+
+//==========================
+// Branch Conditioning Block
 
 always @(*) begin
   case (id_opcode)
@@ -138,6 +144,9 @@ always @(posedge clk or negedge rstn) begin
                           id_opcode == CGT || id_opcode == CLT) ? {15'd0, comp_result} : id_rs1;
   end
 end
+
+//============================
+// Multiplication/Division FSM
 
 reg [15:0] mul_acc;
 reg [16:0] div_temp;

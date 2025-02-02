@@ -18,6 +18,9 @@ module register_writeback (
   output reg        wb_reg_write
 );
 
+//====================================
+// Register File Data Write-Back Block
+
 always @(*) begin
   if (rstn == 1'b0) begin
     wb_reg_write = 1'b0;
