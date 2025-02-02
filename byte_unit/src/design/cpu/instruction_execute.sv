@@ -140,9 +140,11 @@ always @(posedge clk or negedge rstn) begin
 end
 
 reg [15:0] mul_acc;
+reg [16:0] div_temp;
+reg [15:0] dividend;
+reg [15:0] divisor;
 
-reg [15:0] dividend, divisor, quotient;
-reg [3:0] cycle_count;
+reg [4:0] cycle_count;
 
 // States for multiplication and division
 typedef enum logic [1:0] {
@@ -160,23 +162,25 @@ always @(posedge clk or negedge rstn) begin
   if (rstn == 1'b0) begin
     multi_cycle_state <= IDLE;
     mul_acc <= 16'd0;
+    div_temp <= 16'd0;
     dividend <= 16'd0;
     divisor <= 16'd0;
-    quotient <= 16'd0;
-    cycle_count <= 4'd0;
+    cycle_count <= 5'd0;
     alu_multi_cycle_out <= 16'd0;
     multi_cycle_phase_done <= 1'b0;
   end else if (suspend_cpu == 1'b0) begin
     case (multi_cycle_state)
       IDLE: begin
-        cycle_count <= 4'd0;
+        cycle_count <= 5'd0;
+        alu_multi_cycle_out <= 16'd0;
         multi_cycle_phase_done <= 1'b0;
         if (id_opcode == MUL || id_opcode == MULI) begin
+          mul_acc <= 16'd0;
           multi_cycle_state <= MULT;
         end else if (id_opcode == DIV || id_opcode == DIVI) begin
+          div_temp <= 16'd0;
           dividend <= alu_in1;
           divisor <= alu_in2;
-          quotient <= 8'd0;
           multi_cycle_state <= DIVD;
         end
       end
@@ -193,14 +197,18 @@ always @(posedge clk or negedge rstn) begin
       end
       DIVD: begin
         if (cycle_count < 16) begin
-          dividend <= dividend << 1; // Shift left
-          if (dividend >= divisor) begin
-            dividend <= dividend - divisor;
-            quotient[15 - cycle_count] <= 1'b1; // Set corresponding bit
+          div_temp = {div_temp[16-2:0],dividend[16-1]};
+          dividend[16-1:1] = dividend[16-2:0];
+          div_temp = div_temp-divisor;
+          if(div_temp[16-1] == 1) begin
+            dividend[0] = 0;
+            div_temp = div_temp + divisor;
+          end else begin
+            dividend[0] = 1;
           end
           cycle_count <= cycle_count + 1;
         end else begin
-          alu_multi_cycle_out <= quotient;
+          alu_multi_cycle_out = dividend;
           multi_cycle_state <= DONE;
         end
       end
