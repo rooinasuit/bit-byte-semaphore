@@ -1,0 +1,1 @@
+vsim -voptargs=+acc -debugDB -do "sim.do" work.byte_unit_tb -Ldir ..\src
