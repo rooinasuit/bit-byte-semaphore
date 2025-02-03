@@ -73,6 +73,9 @@ wire [7:0] i_imm;
 wire [7:0] b_imm;
 wire [7:0] mem_imm;
 
+//======================
+// Control Signals Block
+
 assign opcode = instruction[4:0];
 
 always @(posedge clk or negedge rstn) begin
@@ -191,6 +194,8 @@ always @(posedge clk or negedge rstn) begin
   end
 end
 
+//======================
+// Immediate Value Block
 
 assign i_imm = instruction[20:13];
 assign b_imm = {instruction[20:17], instruction[8:5]};
@@ -213,13 +218,15 @@ always @(posedge clk or negedge rstn) begin
   end
 end
 
+//====================
+// Register File Block
+
 assign rd_id = instruction[8:5];
 assign rs1_id = instruction[12:9];
 assign rs2_id = instruction[16:13];
 
 integer i_reg;
 
-// cache registers block
 always @(*) begin
   if (rstn == 1'b0) begin
     rs1 = 16'd0;

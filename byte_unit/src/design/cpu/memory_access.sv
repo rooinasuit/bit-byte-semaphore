@@ -50,10 +50,16 @@ module memory_access (
   output reg mem_sema_writeback
 );
 
+//========================
+// Data Memory Assignments
+
 assign data_memory_address = ex_mem_addr;
 assign data_memory_write_en = ex_mem_write;
 assign data_memory_read_en = ex_mem_read;
 assign data_memory_write_data = ex_mem_write_data;
+
+//===================
+// Branch Assignments
 
 assign mem_take_branch = ((ex_branch_taken == 1'b1) & (ex_mem_branch == 1'b1)) ? 1'b1 : 1'b0;
 assign mem_branch_target_address = ex_branch_target_address;
